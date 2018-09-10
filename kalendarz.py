@@ -16,7 +16,7 @@ def start_calendar():
   welcome()
   start = True
   while start:
-    user_choice = raw_input("A to Add, U to Update, V to View, D to Delete, X to Exit: ")"
+    user_choice = raw_input("A to Add, U to Update, V to View, D to Delete, X to Exit: ")
     user_choice = user_choice.upper()
     if user_choice == 'V':
       if len(calendar.keys()) < 1:
@@ -39,6 +39,10 @@ def start_calendar():
           continue
         else:
           start = False
+      else:
+        calendar[date] = event
+        print "Dodane z sukcesem"
+        print calendar
     elif user_choice == 'D':
       if len(calendar.keys()) < 1:
         print "Kalendarz jest pusty"
