@@ -29,4 +29,32 @@ def start_calendar():
       calendar[date] = update
       print "Wprowadzilem poprawke w dniu: " + calendar[date]
     elif user_choice == 'A':
-      event = raw_input("Wprowadz date: ")
+      event = raw_input("Wprowadz zdarzenie: ")
+      date = raw_input("Wprowadz date w formacie MM/DD/YYYY: ")
+      if(len(date) > 10 or int(date[6:]) < int(strftime("%Y"))):
+        print " Wprowadziles bledna date "
+        try_again = raw_input("Chcesz wprowadzic raz jeszcze? Y/N ")
+        try_again.upper()
+        if try_again == 'Y':
+          continue
+        else:
+          start = False
+    elif user_choice == 'D':
+      if len(calendar.keys()) < 1:
+        print "Kalendarz jest pusty"
+      else:
+        event = raw_input("Ktory ivent?" )
+        for date in calendar.keys():
+          if event == calendar.keys(date):
+            del calendar[date]
+            print "Ivent zostal skutecznie usuniety: "
+            print calendar
+          else:
+            print "an incorrect event was specified "
+    elif user_choice == 'X':
+      start = False
+    else:
+      print "invalid command was entered. "
+      break
+
+start_calendar()
