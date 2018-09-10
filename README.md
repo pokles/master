@@ -1,2 +1,2 @@
-# kalendarz
-cwiczenia z kalendarzem
+# mster
+cwiczenia z pythona
