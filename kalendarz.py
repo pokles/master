@@ -1,4 +1,4 @@
-""" Zabawa z kalendarzem 2018-09-10 plus github 15:30"""
+""" Zabawa z kalendarzem 2018-09-10 plus github 15:52"""
 from time import sleep, strftime
 USER_FIRST_NAME = 'Artur'
 calendar = {}
